@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 
-def plot_voltage_vs_time(time, voltage, max_voltage):
+def plot_voltage_vs_time(time, voltage, max_voltage, filename=None):
     plt.figure(figsize=(10, 6))
     plt.plot(time, voltage)
 
@@ -13,10 +13,14 @@ def plot_voltage_vs_time(time, voltage, max_voltage):
     plt.ylim(0, max_voltage)
 
     plt.grid()
+
+    if filename:
+        plt.savefig(filename, dpi=150)
+
     plt.show()
 
 
-def plot_sampling_period_hist(time):
+def plot_sampling_period_hist(time, filename=None):
     sampling_periods = []
 
     for i in range(1, len(time)):
@@ -32,4 +36,8 @@ def plot_sampling_period_hist(time):
     plt.xlim(0, 0.06)
 
     plt.grid()
+
+    if filename:
+        plt.savefig(filename, dpi=150)
+
     plt.show()

@@ -18,8 +18,8 @@ try:
         voltage_values.append(adc.get_voltage())
         time_values.append(time.time() - start)
 
-    adc_plot.plot_voltage_vs_time(time_values, voltage_values, dynamic_range)
-    adc_plot.plot_sampling_period_hist(time_values)
+    adc_plot.plot_voltage_vs_time(time_values, voltage_values, dynamic_range, "mcp-plot.png")
+    adc_plot.plot_sampling_period_hist(time_values, "mcp-hist.png")
 
 finally:
     adc.deinit()
