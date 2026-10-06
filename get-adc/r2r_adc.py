@@ -29,7 +29,7 @@ class R2R_ADC:
             self.number_to_dac(number)
             time.sleep(self.compare_time)
 
-            if GPIO.input(self.comp_gpio) == 0:
+            if GPIO.input(self.comp_gpio) == 1:
                 return number
 
         return max_number
@@ -51,7 +51,7 @@ class R2R_ADC:
             self.number_to_dac(number)
             time.sleep(self.compare_time)
 
-            if GPIO.input(self.comp_gpio) == 0:
+            if GPIO.input(self.comp_gpio) == 1:
                 number &= ~(1 << bit)    
 
         return number
@@ -72,7 +72,7 @@ if __name__ == "__main__":
         adc = R2R_ADC(3.16)
 
         while True:
-            voltage = adc.get_sar_voltage()
+            voltage = adc.get_sc_voltage()
             print(f"Напряжение: {voltage:.2f} В")
 
     finally:
