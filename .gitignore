@@ -2,3 +2,4 @@ __pycache__/
 *.pyc
 rc-plot.png
 rc-data.csv
+rc_fit.py
