@@ -53,5 +53,3 @@ np.savetxt(
     fmt=["%.6f", "%.5f", "%d"],
 )
 print("Данные сохранены в rc-data.csv")
-
-rc_fit.fit_and_plot(time_values, voltage_values, power_values, dynamic_range)
